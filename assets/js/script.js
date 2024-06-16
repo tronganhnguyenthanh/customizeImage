@@ -13,5 +13,15 @@ document.querySelector(".btn.btn-primary").addEventListener("click", function(){
   localStorage.setItem("bottomRightRadius", borderBottomRightValueRadius),
   localStorage.setItem("bottomLeftRadius", borderBottomLeftValueRadius),
   localStorage.setItem("topRightRadius", borderTopRightValueRadius)
-  window.location.href = "previewCustomizeImage.html"
+  if(imgThumbnail === "" || widthValue === "" || heightValue === "" || borderBottomLeftValueRadius === "" || borderBottomRightValueRadius === "" || borderTopRightValueRadius === "" || borderTopRightValueRadius === ""){
+   document.querySelector("#error").innerHTML = `<p class="text-center text-danger">Please enter all fields</p>`
+  }
+  if(imgThumbnail !== "" || widthValue !== "" || heightValue !== "" || borderBottomLeftValueRadius !== "" || borderBottomRightValueRadius !== "" || borderTopRightValueRadius !== "" || borderTopRightValueRadius !== ""){
+   document.querySelector("#error > p").innerHTML = ""
+   redirectPage()
+  }
 })
+
+function redirectPage(){
+  window.location.href = "previewCustomizeImage.html"
+}
