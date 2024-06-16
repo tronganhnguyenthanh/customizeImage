@@ -17,6 +17,7 @@
   function getPreviewImage(previewImage){
     document.querySelector("#previewImage").innerHTML = `
       <img src=${previewImage.imageThumbnail} alt=""/>
+      <button type="button" class="btn btn-danger m-2" onclick="deleteLocalStorageAndElement()">Delete</button>
     `
     document.querySelector("#previewImage > img").style.width = previewImage.width
     document.querySelector("#previewImage > img").style.height = previewImage.height
@@ -28,18 +29,8 @@
 
   getPreviewImage(previewImage)
 
-  // function checkLocalStorage(){
-  //  if(localStorage.getItem("thumbnail") !== "" || localStorage.getItem("width") !== "" || localStorage.getItem("height") !== "" || localStorage.getItem("topLeftRadius") !== "" || localStorage.getItem("bottomRightRadius") !== "" || localStorage.getItem("bottomLeftRadius") !== "" || localStorage.getItem("topRightRadius") !== ""){
-  //    window.location.href = "previewCustomizeImage.html"
-  //  }else{
-  //    localStorage.removeItem("thumbnail")
-  //    localStorage.removeItem("width")
-  //    localStorage.removeItem("height")
-  //    localStorage.removeItem("topLeftRadius")
-  //    localStorage.removeItem("bottomRightRadius")
-  //    localStorage.removeItem("bottomLeftRadius")
-  //    localStorage.removeItem("topRightRadius")
-  //  }
-  // }
-
-  // checkLocalStorage()
+  function deleteLocalStorageAndElement(){
+    document.querySelector("#previewImage > img").remove()
+    document.querySelector(".wrapper").remove()
+    document.querySelector("body").innerHTML = `<h1 class="text-center text-success">Element deleted successfully</h1>`
+  }

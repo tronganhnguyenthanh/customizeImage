@@ -17,7 +17,7 @@ document.querySelector(".btn.btn-primary").addEventListener("click", function(){
    document.querySelector("#error").innerHTML = `<p class="text-center text-danger">Please enter all fields</p>`
   }
   if(imgThumbnail !== "" || widthValue !== "" || heightValue !== "" || borderBottomLeftValueRadius !== "" || borderBottomRightValueRadius !== "" || borderTopRightValueRadius !== "" || borderTopRightValueRadius !== ""){
-   document.querySelector("#error > p").innerHTML = ""
+   document.querySelector("#error").innerHTML = ""
    redirectPage()
   }
 })
