@@ -29,8 +29,13 @@
 
   getPreviewImage(previewImage)
 
+  function showMessage(message){
+    document.querySelector("body").innerHTML = `<h1 class="text-center text-success">${message}</h1>`
+    return message
+  }
+
   function deleteLocalStorageAndElement(){
     document.querySelector("#previewImage > img").remove()
     document.querySelector(".wrapper").remove()
-    document.querySelector("body").innerHTML = `<h1 class="text-center text-success">Element deleted successfully</h1>`
+    showMessage("Image deleted successfully")
   }

@@ -25,3 +25,16 @@ body{
 body > h1{
  padding-top:20%;
 }
+
+.responsive-wrapper{
+  padding-top:10%;
+}
+
+@media (max-width:576px){
+  .wrapper{
+    width:100%;
+  }
+  .responsive-wrapper{
+    padding-top:40%;
+  }
+}
